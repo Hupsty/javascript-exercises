@@ -7,26 +7,15 @@ const subtract = function(x, y) {
 };
 
 const sum = function(array) {
-	let sum = 0;
-  if (array == '') return 0;
-  if (array.length > 0) {
-    for (let i = 0; i < array.length; i++) {
-      sum += array[i];
-    }
-  }
-  return sum;
+	return array.reduce(function(total, current) {
+    return total + current;
+  }, 0)
 };
 
 const multiply = function(array) {
-  let answer = 0;
-    for (let i = 0; i < array.length; i++) {
-      if (i == 0) {
-        answer = array[0];
-        continue;
-      }
-        answer = answer * array[i];
-    }
-  return answer;
+  return array.reduce(function (total, current) {
+    return total * current;
+  })
 };
 
 const power = function(x, y) {
